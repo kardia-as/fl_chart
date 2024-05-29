@@ -714,6 +714,7 @@ class BarTouchTooltipData with EquatableMixin {
     TooltipDirection? direction,
     double? rotateAngle,
     BorderSide? tooltipBorder,
+    bool? showOnTopOfTheChartBoxArea,
   })  : tooltipRoundedRadius = tooltipRoundedRadius ?? 4,
         tooltipPadding = tooltipPadding ??
             const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -729,6 +730,7 @@ class BarTouchTooltipData with EquatableMixin {
         direction = direction ?? TooltipDirection.auto,
         rotateAngle = rotateAngle ?? 0.0,
         tooltipBorder = tooltipBorder ?? BorderSide.none,
+        showOnTopOfTheChartBoxArea = showOnTopOfTheChartBoxArea ?? false,
         super();
 
   /// Sets a rounded radius for the tooltip.
@@ -770,6 +772,9 @@ class BarTouchTooltipData with EquatableMixin {
   /// Retrieves data for setting background color of the tooltip.
   final GetBarTooltipColor getTooltipColor;
 
+  /// Forces the tooltip container to top of the line, default 'false'
+  final bool showOnTopOfTheChartBoxArea;
+
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
@@ -785,6 +790,7 @@ class BarTouchTooltipData with EquatableMixin {
         rotateAngle,
         tooltipBorder,
         getTooltipColor,
+        showOnTopOfTheChartBoxArea,
       ];
 }
 
