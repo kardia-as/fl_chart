@@ -110,7 +110,7 @@ abstract class AxisChartPainter<D extends AxisChartData>
         min: data.minY,
         minIncluded: false,
         max: data.maxY,
-        maxIncluded: false,
+        maxIncluded: true,
         baseLine: data.baselineY,
         interval: horizontalInterval,
       );
